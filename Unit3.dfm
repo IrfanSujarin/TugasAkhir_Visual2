@@ -1,9 +1,9 @@
-object Form2: TForm2
-  Left = 192
-  Top = 125
-  Width = 978
-  Height = 691
-  Caption = 'Form2'
+object Form3: TForm3
+  Left = 388
+  Top = 273
+  Width = 976
+  Height = 614
+  Caption = 'Form3'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,11 +14,11 @@ object Form2: TForm2
   PixelsPerInch = 96
   TextHeight = 13
   object Label14: TLabel
-    Left = 376
+    Left = 264
     Top = 32
-    Width = 162
+    Width = 414
     Height = 31
-    Caption = 'DATA SISWA'
+    Caption = 'DATA ORANG TUA/WALI SISWA'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -27
@@ -30,14 +30,14 @@ object Form2: TForm2
     Left = 64
     Top = 88
     Width = 817
-    Height = 353
+    Height = 281
     TabOrder = 0
     object Label1: TLabel
       Left = 40
       Top = 40
-      Width = 35
+      Width = 101
       Height = 17
-      Caption = 'NISN'
+      Caption = 'ID ORTU/WALI'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -48,9 +48,9 @@ object Form2: TForm2
     object Label2: TLabel
       Left = 40
       Top = 72
-      Width = 24
+      Width = 56
       Height = 17
-      Caption = 'NIS'
+      Caption = 'NIP/NIK'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -61,19 +61,6 @@ object Form2: TForm2
     object Label3: TLabel
       Left = 40
       Top = 104
-      Width = 27
-      Height = 17
-      Caption = 'NIK'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Times New Roman'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label4: TLabel
-      Left = 40
-      Top = 136
       Width = 46
       Height = 17
       Caption = 'NAMA'
@@ -84,35 +71,9 @@ object Form2: TForm2
       Font.Style = []
       ParentFont = False
     end
-    object Label5: TLabel
+    object Label4: TLabel
       Left = 40
-      Top = 200
-      Width = 119
-      Height = 17
-      Caption = 'TANGGAL LAHIR'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Times New Roman'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label6: TLabel
-      Left = 40
-      Top = 168
-      Width = 107
-      Height = 17
-      Caption = 'TEMPAT LAHIR'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Times New Roman'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label7: TLabel
-      Left = 448
-      Top = 40
+      Top = 136
       Width = 112
       Height = 17
       Caption = 'JENIS KELAMIN'
@@ -123,61 +84,22 @@ object Form2: TForm2
       Font.Style = []
       ParentFont = False
     end
+    object Label7: TLabel
+      Left = 448
+      Top = 40
+      Width = 94
+      Height = 17
+      Caption = 'PENDIDIKAN'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Times New Roman'
+      Font.Style = []
+      ParentFont = False
+    end
     object Label8: TLabel
       Left = 448
       Top = 72
-      Width = 48
-      Height = 17
-      Caption = 'KELAS'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Times New Roman'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label9: TLabel
-      Left = 448
-      Top = 104
-      Width = 68
-      Height = 17
-      Caption = 'JURUSAN'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Times New Roman'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label10: TLabel
-      Left = 448
-      Top = 136
-      Width = 109
-      Height = 17
-      Caption = 'ID WALI KELAS'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Times New Roman'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label11: TLabel
-      Left = 448
-      Top = 168
-      Width = 62
-      Height = 17
-      Caption = 'ALAMAT'
-      Font.Charset = ANSI_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -15
-      Font.Name = 'Times New Roman'
-      Font.Style = []
-      ParentFont = False
-    end
-    object Label12: TLabel
-      Left = 448
-      Top = 200
       Width = 84
       Height = 17
       Caption = 'NO TELPON'
@@ -188,12 +110,12 @@ object Form2: TForm2
       Font.Style = []
       ParentFont = False
     end
-    object Label13: TLabel
+    object Label9: TLabel
       Left = 448
-      Top = 232
-      Width = 53
+      Top = 104
+      Width = 87
       Height = 17
-      Caption = 'STATUS'
+      Caption = 'PEKERJAAN'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -230,114 +152,70 @@ object Form2: TForm2
       TabOrder = 3
     end
     object Edit5: TEdit
-      Left = 184
-      Top = 168
+      Left = 584
+      Top = 40
       Width = 185
       Height = 21
       TabOrder = 4
     end
     object Edit6: TEdit
       Left = 584
-      Top = 40
+      Top = 72
       Width = 185
       Height = 21
       TabOrder = 5
     end
-    object DateTimePicker1: TDateTimePicker
-      Left = 184
-      Top = 200
-      Width = 186
-      Height = 21
-      Date = 45098.566135648150000000
-      Time = 45098.566135648150000000
-      TabOrder = 6
-    end
     object Edit7: TEdit
-      Left = 584
-      Top = 72
-      Width = 185
-      Height = 21
-      TabOrder = 7
-    end
-    object Edit8: TEdit
       Left = 584
       Top = 104
       Width = 185
       Height = 21
-      TabOrder = 8
-    end
-    object Edit9: TEdit
-      Left = 584
-      Top = 136
-      Width = 185
-      Height = 21
-      TabOrder = 9
-    end
-    object Edit10: TEdit
-      Left = 584
-      Top = 168
-      Width = 185
-      Height = 21
-      TabOrder = 10
-    end
-    object Edit11: TEdit
-      Left = 584
-      Top = 200
-      Width = 185
-      Height = 21
-      TabOrder = 11
-    end
-    object Edit12: TEdit
-      Left = 584
-      Top = 232
-      Width = 185
-      Height = 21
-      TabOrder = 12
+      TabOrder = 6
     end
     object Button1: TButton
       Left = 40
-      Top = 280
+      Top = 192
       Width = 113
       Height = 41
       Caption = 'BARU'
-      TabOrder = 13
+      TabOrder = 7
     end
     object Button2: TButton
       Left = 192
-      Top = 280
+      Top = 192
       Width = 113
       Height = 41
       Caption = 'SIMPAN'
-      TabOrder = 14
+      TabOrder = 8
     end
     object Button3: TButton
-      Left = 352
-      Top = 280
+      Left = 344
+      Top = 192
       Width = 113
       Height = 41
       Caption = 'EDIT'
-      TabOrder = 15
+      TabOrder = 9
     end
     object Button4: TButton
       Left = 504
-      Top = 280
+      Top = 192
       Width = 113
       Height = 41
       Caption = 'HAPUS'
-      TabOrder = 16
+      TabOrder = 10
     end
     object Button5: TButton
       Left = 656
-      Top = 280
+      Top = 192
       Width = 113
       Height = 41
       Caption = 'BATAL'
-      TabOrder = 17
+      TabOrder = 11
     end
   end
   object DBGrid1: TDBGrid
     Left = 64
-    Top = 480
+    Top = 400
     Width = 817
     Height = 120
     TabOrder = 1
