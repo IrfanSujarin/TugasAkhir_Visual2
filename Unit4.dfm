@@ -218,11 +218,42 @@ object Form4: TForm4
     Top = 400
     Width = 849
     Height = 120
+    DataSource = DataSource1
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cGET_ACP
+    UTF8StringsAsWideField = False
+    AutoEncodeStrings = False
+    Properties.Strings = (
+      'controls_cp=GET_ACP')
+    Connected = True
+    HostName = 'localhost'
+    Port = 8111
+    Database = 'lapora_siswa'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 'D:\Tugas Kuliah\visual 2\UAS\libmysql.dll'
+    Left = 648
+    Top = 40
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from data_walkel')
+    Params = <>
+    Left = 712
+    Top = 40
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    Left = 768
+    Top = 40
   end
 end
