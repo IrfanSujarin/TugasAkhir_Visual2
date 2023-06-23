@@ -1,6 +1,6 @@
 object Form3: TForm3
-  Left = 388
-  Top = 273
+  Left = 298
+  Top = 211
   Width = 976
   Height = 614
   Caption = 'Form3'
@@ -218,11 +218,40 @@ object Form3: TForm3
     Top = 400
     Width = 817
     Height = 120
+    DataSource = DataSource1
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cGET_ACP
+    UTF8StringsAsWideField = False
+    AutoEncodeStrings = False
+    Connected = True
+    HostName = 'localhost'
+    Port = 8111
+    Database = 'lapora_siswa'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 'D:\Tugas Kuliah\visual 2\UAS\libmysql.dll'
+    Left = 704
+    Top = 48
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from data_ortu')
+    Params = <>
+    Left = 760
+    Top = 48
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    Left = 816
+    Top = 56
   end
 end
