@@ -1,7 +1,7 @@
 object Form2: TForm2
   Left = 192
   Top = 125
-  Width = 978
+  Width = 964
   Height = 691
   Caption = 'Form2'
   Color = clBtnFace
@@ -340,11 +340,40 @@ object Form2: TForm2
     Top = 480
     Width = 817
     Height = 120
+    DataSource = DataSource1
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cGET_ACP
+    UTF8StringsAsWideField = False
+    AutoEncodeStrings = False
+    Connected = True
+    HostName = 'localhost'
+    Port = 8111
+    Database = 'lapora_siswa'
+    User = 'root'
+    Protocol = 'mysql'
+    LibraryLocation = 'D:\Tugas Kuliah\visual 2\UAS\libmysql.dll'
+    Left = 680
+    Top = 40
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'select * from data_siswa')
+    Params = <>
+    Left = 752
+    Top = 40
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    Left = 816
+    Top = 40
   end
 end
