@@ -1,6 +1,6 @@
 object Form3: TForm3
-  Left = 298
-  Top = 211
+  Left = 489
+  Top = 198
   Width = 976
   Height = 661
   Caption = 'Form3'
@@ -11,6 +11,7 @@ object Form3: TForm3
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label14: TLabel
@@ -245,7 +246,6 @@ object Form3: TForm3
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
-    Connected = True
     HostName = 'localhost'
     Port = 8111
     Database = 'lapora_siswa'
@@ -257,7 +257,6 @@ object Form3: TForm3
   end
   object ZQuery1: TZQuery
     Connection = ZConnection1
-    Active = True
     SQL.Strings = (
       'select * from data_ortu')
     Params = <>

@@ -35,7 +35,10 @@ type
     Button6: TButton;
     Edit7: TEdit;
     Label1: TLabel;
+     procedure bersih;
+     procedure posisiawal;
     procedure Button6Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -52,9 +55,42 @@ uses Unit5;
 
 {$R *.dfm}
 
+procedure TForm3.bersih;
+begin
+  edit1.clear;
+  edit2.clear;
+  edit3.clear;
+  edit4.clear;
+  edit5.clear;
+  edit6.clear;
+  edit7.clear;
+end;
+
 procedure TForm3.Button6Click(Sender: TObject);
 begin
 form5.show;
+end;
+
+procedure TForm3.posisiawal;
+begin
+bersih;
+  button1.Enabled := True;
+  button2.Enabled := False;
+  button3.Enabled := False;
+  button4.Enabled := False;
+  button5.Enabled := False;
+  edit1.Enabled := False;
+  edit2.Enabled := False;
+  edit3.Enabled := False;
+  edit4.Enabled := False;
+  edit5.Enabled := False;
+  edit6.Enabled := False;
+  edit7.Enabled := False;
+end;
+
+procedure TForm3.FormShow(Sender: TObject);
+begin
+posisiawal;
 end;
 
 end.
