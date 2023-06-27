@@ -39,6 +39,9 @@ type
      procedure posisiawal;
     procedure Button6Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -90,6 +93,93 @@ end;
 
 procedure TForm3.FormShow(Sender: TObject);
 begin
+posisiawal;
+end;
+
+procedure TForm3.DBGrid1CellClick(Column: TColumn);
+begin
+id:=ZQuery1.Fields[0].AsString;
+edit1.Text := ZQuery1.FieldList[1].AsString;
+edit2.Text := ZQuery1.FieldList[2].AsString;
+edit3.Text := ZQuery1.FieldList[3].AsString;
+edit4.Text := ZQuery1.FieldList[4].AsString;
+edit5.Text := ZQuery1.FieldList[5].AsString;
+edit6.Text := ZQuery1.FieldList[6].AsString;
+edit7.Text := ZQuery1.FieldList[7].AsString;
+
+
+  button1.Enabled := False;
+  button2.Enabled := False;
+  button3.Enabled := True;
+  button4.Enabled := True;
+  button5.Enabled := True;
+  edit1.Enabled := True;
+  edit2.Enabled := True;
+  edit3.Enabled := True;
+  edit4.Enabled := True;
+  edit5.Enabled := True;
+  edit6.Enabled := True;
+  edit7.Enabled := True;
+end;
+
+procedure TForm3.Button1Click(Sender: TObject);
+begin
+  button1.Enabled := False;
+  button2.Enabled := True;
+  button3.Enabled := False;
+  button4.Enabled := False;
+  button5.Enabled := True;
+  edit1.Enabled := True;
+  edit2.Enabled := True;
+  edit3.Enabled := True;
+  edit4.Enabled := True;
+  edit5.Enabled := True;
+  edit6.Enabled := True;
+  edit7.Enabled := True;
+end;
+
+procedure TForm3.Button2Click(Sender: TObject);
+begin
+if edit1.Text =''then
+begin
+  ShowMessage('NISN TIDAK BOLEH KOSONG');
+  end else
+if edit2.Text =''then
+begin
+  ShowMessage('NIS TIDAK BOLEH KOSONG');
+  end else
+if edit3.Text =''then
+begin
+  ShowMessage('NIK TIDAK BOLEH KOSONG');
+  end else
+if edit4.Text =''then
+begin
+  ShowMessage('NAMA TIDAK BOLEH KOSONG');
+  end else
+if edit5.Text =''then
+begin
+  ShowMessage('TEMPAT LAHIR TIDAK BOLEH KOSONG');
+  end else
+if edit6.Text =''then
+begin
+  ShowMessage('JENIS KELAMIN TIDAK BOLEH KOSONG');
+  end else
+if edit7.Text =''then
+begin
+  ShowMessage('KELAS TIDAK BOLEH KOSONG');
+  end else
+begin
+  //simpan
+end;
+
+ZQuery1.SQL.Clear;
+ZQuery1.SQL.Add('insert into data_ortu values(null,"'+edit1.text+'","'+edit2.text+'","'+edit3.text+'","'+edit4.text+'","'+edit5.text+'","'+edit6.text+'","'+edit7.text+'")');
+ZQuery1.ExecSQL;
+
+ZQuery1.SQL.Clear;
+ZQuery1.SQL.Add('select * from data_ortu');
+ZQuery1.Open;
+ShowMessage('Data Berhasil Disimpan');
 posisiawal;
 end;
 

@@ -1,6 +1,6 @@
 object Form3: TForm3
-  Left = 489
-  Top = 198
+  Left = 225
+  Top = 373
   Width = 976
   Height = 661
   Caption = 'Form3'
@@ -173,6 +173,7 @@ object Form3: TForm3
       Height = 41
       Caption = 'BARU'
       TabOrder = 6
+      OnClick = Button1Click
     end
     object Button2: TButton
       Left = 192
@@ -181,6 +182,7 @@ object Form3: TForm3
       Height = 41
       Caption = 'SIMPAN'
       TabOrder = 7
+      OnClick = Button2Click
     end
     object Button3: TButton
       Left = 344
@@ -226,6 +228,7 @@ object Form3: TForm3
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
   end
   object Button6: TButton
     Left = 64
@@ -246,6 +249,7 @@ object Form3: TForm3
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
+    Connected = True
     HostName = 'localhost'
     Port = 8111
     Database = 'lapora_siswa'
@@ -257,6 +261,7 @@ object Form3: TForm3
   end
   object ZQuery1: TZQuery
     Connection = ZConnection1
+    Active = True
     SQL.Strings = (
       'select * from data_ortu')
     Params = <>
