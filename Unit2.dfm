@@ -311,6 +311,7 @@ object Form2: TForm2
       Height = 41
       Caption = 'SIMPAN'
       TabOrder = 14
+      OnClick = Button2Click
     end
     object Button3: TButton
       Left = 352
@@ -349,6 +350,7 @@ object Form2: TForm2
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
   end
   object Button6: TButton
     Left = 64

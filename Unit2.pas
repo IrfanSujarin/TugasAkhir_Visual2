@@ -53,6 +53,8 @@ type
     procedure Button6Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -132,6 +134,108 @@ end;
 procedure TForm2.FormShow(Sender: TObject);
 begin
 posisiawal;
+end;
+
+procedure TForm2.Button2Click(Sender: TObject);
+begin
+if edit1.Text =''then
+begin
+  ShowMessage('NISN TIDAK BOLEH KOSONG');
+  end else
+if edit2.Text =''then
+begin
+  ShowMessage('NIS TIDAK BOLEH KOSONG');
+  end else
+if edit3.Text =''then
+begin
+  ShowMessage('NIK TIDAK BOLEH KOSONG');
+  end else
+if edit4.Text =''then
+begin
+  ShowMessage('NAMA TIDAK BOLEH KOSONG');
+  end else
+if edit5.Text =''then
+begin
+  ShowMessage('TEMPAT LAHIR TIDAK BOLEH KOSONG');
+  end else
+if edit6.Text =''then
+begin
+  ShowMessage('JENIS KELAMIN TIDAK BOLEH KOSONG');
+  end else
+if edit7.Text =''then
+begin
+  ShowMessage('KELAS TIDAK BOLEH KOSONG');
+  end else
+if edit8.Text =''then
+begin
+  ShowMessage('JURUSAN TIDAK BOLEH KOSONG');
+  end else
+if edit9.Text =''then
+begin
+  ShowMessage('WALI KELAS TIDAK BOLEH KOSONG');
+  end else
+if edit10.Text =''then
+begin
+  ShowMessage('ALAMAT TIDAK BOLEH KOSONG');
+  end else
+if edit11.Text =''then
+begin
+  ShowMessage('NO TELPON TIDAK BOLEH KOSONG');
+  end else
+if edit12.Text =''then
+begin
+  ShowMessage('STATUS TIDAK BOLEH KOSONG');
+  end else
+begin
+  //simpan
+end;
+
+ZQuery1.SQL.Clear;
+ZQuery1.SQL.Add('insert into data_siswa values(null,"'+edit1.text+'","'+edit2.text+'","'+edit3.text+'","'+edit4.text+'","'+edit5.text+'","'+formatdatetime('yyyy-mm-dd',datetimepicker1.date)+'","'+edit6.text+'","'+edit7.text+'","'+edit8.text+'","'+edit9.text+'","'+edit10.text+'","'+edit11.text+'","'+edit12.text+'")');
+ZQuery1.ExecSQL;
+
+ZQuery1.SQL.Clear;
+ZQuery1.SQL.Add('select * from data_siswa');
+ZQuery1.Open;
+ShowMessage('Data Berhasil Disimpan');
+posisiawal;
+end;
+
+procedure TForm2.DBGrid1CellClick(Column: TColumn);
+begin
+id:=ZQuery1.Fields[0].AsString;
+edit1.Text := ZQuery1.FieldList[1].AsString;
+edit2.Text := ZQuery1.FieldList[2].AsString;
+edit3.Text := ZQuery1.FieldList[3].AsString;
+edit4.Text := ZQuery1.FieldList[4].AsString;
+edit5.Text := ZQuery1.FieldList[5].AsString;
+datetimepicker1.Date := ZQuery1.FieldList[6].AsDateTime;
+edit6.Text := ZQuery1.FieldList[7].AsString;
+edit7.Text := ZQuery1.FieldList[8].AsString;
+edit8.Text := ZQuery1.FieldList[9].AsString;
+edit9.Text := ZQuery1.FieldList[10].AsString;
+edit10.Text := ZQuery1.FieldList[11].AsString;
+edit11.Text := ZQuery1.FieldList[12].AsString;
+edit12.Text := ZQuery1.FieldList[13].AsString;
+
+  button1.Enabled := False;
+  button2.Enabled := False;
+  button3.Enabled := True;
+  button4.Enabled := True;
+  button5.Enabled := True;
+  edit1.Enabled := True;
+  edit2.Enabled := True;
+  edit3.Enabled := True;
+  edit4.Enabled := True;
+  edit5.Enabled := True;
+  edit6.Enabled := True;
+  edit7.Enabled := True;
+  edit8.Enabled := True;
+  edit9.Enabled := True;
+  edit10.Enabled := True;
+  edit11.Enabled := True;
+  edit12.Enabled := True;
+  datetimepicker1.Enabled := True;
 end;
 
 end.
