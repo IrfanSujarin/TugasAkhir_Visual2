@@ -43,6 +43,7 @@ type
   end;
 
 var
+  id : string;
   Form4: TForm4;
 
 implementation

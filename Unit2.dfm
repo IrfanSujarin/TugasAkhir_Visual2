@@ -1,8 +1,8 @@
 object Form2: TForm2
-  Left = 192
-  Top = 125
+  Left = 232
+  Top = 257
   Width = 964
-  Height = 754
+  Height = 734
   Caption = 'Form2'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,6 +11,7 @@ object Form2: TForm2
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label14: TLabel
@@ -301,6 +302,7 @@ object Form2: TForm2
       Height = 41
       Caption = 'BARU'
       TabOrder = 13
+      OnClick = Button1Click
     end
     object Button2: TButton
       Left = 192
