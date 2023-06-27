@@ -10,7 +10,6 @@ uses
 type
   TForm3 = class(TForm)
     Panel1: TPanel;
-    Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -23,7 +22,6 @@ type
     Edit4: TEdit;
     Edit5: TEdit;
     Edit6: TEdit;
-    Edit7: TEdit;
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
@@ -34,6 +32,10 @@ type
     ZConnection1: TZConnection;
     ZQuery1: TZQuery;
     DataSource1: TDataSource;
+    Button6: TButton;
+    Edit7: TEdit;
+    Label1: TLabel;
+    procedure Button6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,6 +47,13 @@ var
 
 implementation
 
+uses Unit5;
+
 {$R *.dfm}
+
+procedure TForm3.Button6Click(Sender: TObject);
+begin
+form5.show;
+end;
 
 end.

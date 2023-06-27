@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 306
-  Top = 180
+  Left = 540
+  Top = 348
   Width = 573
   Height = 295
   Caption = 'Form1'
@@ -20,6 +20,7 @@ object Form1: TForm1
     Height = 41
     Caption = 'MASUK'
     TabOrder = 0
+    OnClick = Button1Click
   end
   object Button2: TButton
     Left = 280
@@ -28,5 +29,6 @@ object Form1: TForm1
     Height = 41
     Caption = 'KELUAR'
     TabOrder = 1
+    OnClick = Button2Click
   end
 end

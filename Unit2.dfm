@@ -2,7 +2,7 @@ object Form2: TForm2
   Left = 192
   Top = 125
   Width = 964
-  Height = 691
+  Height = 754
   Caption = 'Form2'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -347,6 +347,21 @@ object Form2: TForm2
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+  end
+  object Button6: TButton
+    Left = 64
+    Top = 624
+    Width = 113
+    Height = 41
+    Caption = 'KEMBALI'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+    OnClick = Button6Click
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cGET_ACP

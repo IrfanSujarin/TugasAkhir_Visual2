@@ -34,6 +34,8 @@ type
     ZConnection1: TZConnection;
     ZQuery1: TZQuery;
     DataSource1: TDataSource;
+    Button6: TButton;
+    procedure Button6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,6 +47,13 @@ var
 
 implementation
 
+uses Unit5;
+
 {$R *.dfm}
+
+procedure TForm4.Button6Click(Sender: TObject);
+begin
+form5.show;
+end;
 
 end.
