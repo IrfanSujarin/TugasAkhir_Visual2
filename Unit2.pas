@@ -55,6 +55,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -129,6 +131,12 @@ begin
   edit5.Enabled := True;
   edit6.Enabled := True;
   edit7.Enabled := True;
+  edit8.Enabled := True;
+  edit9.Enabled := True;
+  edit10.Enabled := True;
+  edit11.Enabled := True;
+  edit12.Enabled := True;
+  datetimepicker1.Enabled := True;
 end;
 
 procedure TForm2.FormShow(Sender: TObject);
@@ -236,6 +244,45 @@ edit12.Text := ZQuery1.FieldList[13].AsString;
   edit11.Enabled := True;
   edit12.Enabled := True;
   datetimepicker1.Enabled := True;
+end;
+
+procedure TForm2.Button3Click(Sender: TObject);
+begin
+if (edit1.Text= '')or(edit2.Text= '')or(edit3.Text= '')or(edit4.Text= '')or(edit5.Text= '')or(edit6.Text= '')or(edit7.Text= '')or(edit8.Text= '')or(edit9.Text= '')or(edit10.Text= '')or(edit11.Text= '')or(edit12.Text= '') then
+begin
+  ShowMessage('Inputan Wajib Di Isi');
+end else
+
+begin
+  ShowMessage('Data Berhasil Di Update');
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('Update data_siswa set nisn="'+edit1.Text+'",nis="'+edit2.Text+'",nik="'+edit3.Text+'",nama="'+edit4.Text+'",tempat_lahir="'+edit5.Text+'",tanggal_lahir="'+formatdatetime('yyyy-mm-dd',datetimepicker1.date)+'",jenis_kelamin="'+edit6.Text+'",kelas="'+edit7.Text+'",jurusan="'+edit8.Text+'",wali_kelas="'+edit9.Text+'",alamat="'+edit10.Text+'",no_telpon="'+edit11.Text+'",status="'+edit12.Text+'" where id ="'+id+'"');
+  ZQuery1.ExecSQL;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('select*from data_siswa');
+  ZQuery1.Open;
+  posisiawal;
+end;
+end;
+
+procedure TForm2.Button4Click(Sender: TObject);
+begin
+if MessageDlg('Apakah Anda Yakin Menghapus Data Ini?',mtWarning,[mbYes,mbNo],0)= mryes then
+begin
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('delete from data_siswa where id ="'+id+'"');
+  ZQuery1.ExecSQL;
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('select * from data_siswa');
+  ZQuery1.Open;
+  ShowMessage('Data Berhasil Dihapus');
+  posisiawal;
+end else
+begin
+  ShowMessage('Data Batal Dihapus');
+  posisiawal;
+end;
 end;
 
 end.
