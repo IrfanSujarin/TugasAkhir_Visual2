@@ -202,16 +202,16 @@ object Form4: TForm4
       OnClick = Button3Click
     end
     object Button4: TButton
-      Left = 512
-      Top = 192
+      Left = 616
+      Top = 240
       Width = 113
       Height = 41
       Caption = 'HAPUS'
       TabOrder = 10
     end
     object Button5: TButton
-      Left = 672
-      Top = 192
+      Left = 736
+      Top = 240
       Width = 113
       Height = 41
       Caption = 'BATAL'
