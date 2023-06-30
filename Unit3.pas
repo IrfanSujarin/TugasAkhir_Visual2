@@ -144,31 +144,31 @@ procedure TForm3.Button2Click(Sender: TObject);
 begin
 if edit1.Text =''then
 begin
-  ShowMessage('NISN TIDAK BOLEH KOSONG');
+  ShowMessage('NIP/NIK TIDAK BOLEH KOSONG');
   end else
 if edit2.Text =''then
 begin
-  ShowMessage('NIS TIDAK BOLEH KOSONG');
+  ShowMessage('NAMA TIDAK BOLEH KOSONG');
   end else
 if edit3.Text =''then
 begin
-  ShowMessage('NIK TIDAK BOLEH KOSONG');
+  ShowMessage('JENIS KELAMIN TIDAK BOLEH KOSONG');
   end else
 if edit4.Text =''then
 begin
-  ShowMessage('NAMA TIDAK BOLEH KOSONG');
+  ShowMessage('PENDIDIKAN TIDAK BOLEH KOSONG');
   end else
 if edit5.Text =''then
 begin
-  ShowMessage('TEMPAT LAHIR TIDAK BOLEH KOSONG');
+  ShowMessage(' NO TELPON TIDAK BOLEH KOSONG');
   end else
 if edit6.Text =''then
 begin
-  ShowMessage('JENIS KELAMIN TIDAK BOLEH KOSONG');
+  ShowMessage('PEKERJAAN TIDAK BOLEH KOSONG');
   end else
 if edit7.Text =''then
 begin
-  ShowMessage('KELAS TIDAK BOLEH KOSONG');
+  ShowMessage('ALAMAT TIDAK BOLEH KOSONG');
   end else
 begin
   //simpan
@@ -195,7 +195,7 @@ end else
 begin
   ShowMessage('Data Berhasil Di Update');
   ZQuery1.SQL.Clear;
-  ZQuery1.SQL.Add('Update data_siswa set nisn="'+edit1.Text+'",nis="'+edit2.Text+'",nik="'+edit3.Text+'",nama="'+edit4.Text+'",tempat_lahir="'+edit5.Text+'",jenis_kelamin="'+edit6.Text+'",kelas="'+edit7.Text+'" where id ="'+id+'"');
+  ZQuery1.SQL.Add('Update data_siswa set nik="'+edit1.Text+'",nama="'+edit2.Text+'",jenis_kelamin="'+edit3.Text+'",pendidikan="'+edit4.Text+'",no_telpon="'+edit5.Text+'",pekerjaan="'+edit6.Text+'",alamat="'+edit7.Text+'" where id ="'+id+'"');
   ZQuery1.ExecSQL;
 
   ZQuery1.SQL.Clear;

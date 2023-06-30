@@ -41,6 +41,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -135,6 +137,57 @@ edit7.Text := ZQuery1.FieldList[7].AsString;
   edit5.Enabled := True;
   edit6.Enabled := True;
   edit7.Enabled := True;
+end;
+
+procedure TForm4.Button2Click(Sender: TObject);
+begin
+if edit1.Text =''then
+begin
+  ShowMessage('NIK TIDAK BOLEH KOSONG');
+  end else
+if edit2.Text =''then
+begin
+  ShowMessage('NAMA TIDAK BOLEH KOSONG');
+  end else
+if edit3.Text =''then
+begin
+  ShowMessage('JENIS KELAMIN TIDAK BOLEH KOSONG');
+  end else
+if edit4.Text =''then
+begin
+  ShowMessage('PENDIDIKAN TIDAK BOLEH KOSONG');
+  end else
+if edit5.Text =''then
+begin
+  ShowMessage('MATA PELAJARAN LAHIR TIDAK BOLEH KOSONG');
+  end else
+if edit6.Text =''then
+begin
+  ShowMessage('JTIKAT KELAS TIDAK BOLEH KOSONG');
+  end else
+if edit7.Text =''then
+begin
+  ShowMessage('JABATAN TIDAK BOLEH KOSONG');
+  end else
+end;
+
+procedure TForm4.Button3Click(Sender: TObject);
+begin
+if (edit1.Text= '')or(edit2.Text= '')or(edit3.Text= '')or(edit4.Text= '')or(edit5.Text= '')or(edit6.Text= '')or(edit7.Text= '') then
+begin
+  ShowMessage('Inputan Wajib Di Isi');
+end else
+
+begin
+  ShowMessage('Data Berhasil Di Update');
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('Update data_walkel set nik="'+edit1.Text+'",nama="'+edit2.Text+'",jenis_kelamin="'+edit3.Text+'",pendidikan="'+edit4.Text+'",mata_pelajaran="'+edit5.Text+'",tingkat_kelas="'+edit6.Text+'",jabatan="'+edit7.Text+'" where id ="'+id+'"');
+  ZQuery1.ExecSQL;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('select*from data_siswa');
+  ZQuery1.Open;
+  posisiawal;
 end;
 
 end.
