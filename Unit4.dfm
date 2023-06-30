@@ -3,6 +3,7 @@ object Form4: TForm4
   Top = 257
   Width = 1005
   Height = 675
+  ActiveControl = Button1
   Caption = 'Form4'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,6 +12,7 @@ object Form4: TForm4
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label14: TLabel
@@ -179,6 +181,7 @@ object Form4: TForm4
       Height = 41
       Caption = 'BARU'
       TabOrder = 7
+      OnClick = Button1Click
     end
     object Button2: TButton
       Left = 192
@@ -225,6 +228,7 @@ object Form4: TForm4
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
   end
   object Button6: TButton
     Left = 64

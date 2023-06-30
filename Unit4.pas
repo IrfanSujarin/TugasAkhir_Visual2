@@ -35,7 +35,12 @@ type
     ZQuery1: TZQuery;
     DataSource1: TDataSource;
     Button6: TButton;
+     procedure bersih;
+     procedure posisiawal;
     procedure Button6Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -52,9 +57,84 @@ uses Unit5;
 
 {$R *.dfm}
 
+procedure TForm4.bersih;
+begin
+  edit1.clear;
+  edit2.clear;
+  edit3.clear;
+  edit4.clear;
+  edit5.clear;
+  edit6.clear;
+  edit7.clear;
+end;
+
 procedure TForm4.Button6Click(Sender: TObject);
 begin
 form5.show;
+end;
+
+procedure TForm4.posisiawal;
+begin
+bersih;
+  button1.Enabled := True;
+  button2.Enabled := False;
+  button3.Enabled := False;
+  button4.Enabled := False;
+  button5.Enabled := False;
+  edit1.Enabled := False;
+  edit2.Enabled := False;
+  edit3.Enabled := False;
+  edit4.Enabled := False;
+  edit5.Enabled := False;
+  edit6.Enabled := False;
+  edit7.Enabled := False;
+end;
+
+procedure TForm4.FormShow(Sender: TObject);
+begin
+posisiawal;
+end;
+
+procedure TForm4.Button1Click(Sender: TObject);
+begin
+  button1.Enabled := False;
+  button2.Enabled := True;
+  button3.Enabled := False;
+  button4.Enabled := False;
+  button5.Enabled := True;
+  edit1.Enabled := True;
+  edit2.Enabled := True;
+  edit3.Enabled := True;
+  edit4.Enabled := True;
+  edit5.Enabled := True;
+  edit6.Enabled := True;
+  edit7.Enabled := True;
+end;
+
+procedure TForm4.DBGrid1CellClick(Column: TColumn);
+begin
+id:=ZQuery1.Fields[0].AsString;
+edit1.Text := ZQuery1.FieldList[1].AsString;
+edit2.Text := ZQuery1.FieldList[2].AsString;
+edit3.Text := ZQuery1.FieldList[3].AsString;
+edit4.Text := ZQuery1.FieldList[4].AsString;
+edit5.Text := ZQuery1.FieldList[5].AsString;
+edit6.Text := ZQuery1.FieldList[6].AsString;
+edit7.Text := ZQuery1.FieldList[7].AsString;
+
+
+  button1.Enabled := False;
+  button2.Enabled := False;
+  button3.Enabled := True;
+  button4.Enabled := True;
+  button5.Enabled := True;
+  edit1.Enabled := True;
+  edit2.Enabled := True;
+  edit3.Enabled := True;
+  edit4.Enabled := True;
+  edit5.Enabled := True;
+  edit6.Enabled := True;
+  edit7.Enabled := True;
 end;
 
 end.
