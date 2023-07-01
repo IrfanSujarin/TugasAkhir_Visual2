@@ -5,7 +5,8 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, DBGrids, StdCtrls, ExtCtrls, DB, ZAbstractRODataset,
-  ZAbstractDataset, ZDataset, ZAbstractConnection, ZConnection;
+  ZAbstractDataset, ZDataset, ZAbstractConnection, ZConnection, frxClass,
+  frxDBSet;
 
 type
   TForm3 = class(TForm)
@@ -35,6 +36,9 @@ type
     Button6: TButton;
     Edit7: TEdit;
     Label1: TLabel;
+    Button7: TButton;
+    frxDBDataset1: TfrxDBDataset;
+    frxReport1: TfrxReport;
      procedure bersih;
      procedure posisiawal;
     procedure Button6Click(Sender: TObject);
@@ -44,6 +48,8 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -84,6 +90,7 @@ bersih;
   button3.Enabled := False;
   button4.Enabled := False;
   button5.Enabled := False;
+  button6.Enabled := False;
   edit1.Enabled := False;
   edit2.Enabled := False;
   edit3.Enabled := False;
@@ -115,6 +122,7 @@ edit7.Text := ZQuery1.FieldList[7].AsString;
   button3.Enabled := True;
   button4.Enabled := True;
   button5.Enabled := True;
+  button7.Enabled := True;
   edit1.Enabled := True;
   edit2.Enabled := True;
   edit3.Enabled := True;
@@ -131,6 +139,7 @@ begin
   button3.Enabled := False;
   button4.Enabled := False;
   button5.Enabled := True;
+  button7.Enabled := True;
   edit1.Enabled := True;
   edit2.Enabled := True;
   edit3.Enabled := True;
@@ -222,6 +231,23 @@ begin
   ShowMessage('Data Batal Dihapus');
   posisiawal;
 end;
+end;
+
+procedure TForm3.Button5Click(Sender: TObject);
+begin
+Edit1.Clear;
+Edit2.Clear;
+Edit3.Clear;
+Edit4.Clear;
+Edit5.Clear;
+Edit6.Clear;
+Edit7.Clear;
+posisiawal;
+end;
+
+procedure TForm3.Button7Click(Sender: TObject);
+begin
+frxReport1.ShowReport();
 end;
 
 end.

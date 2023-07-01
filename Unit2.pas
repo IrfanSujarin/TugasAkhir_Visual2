@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, DBGrids, StdCtrls, ComCtrls, ExtCtrls, DB,
   ZAbstractRODataset, ZAbstractDataset, ZDataset, ZAbstractConnection,
-  ZConnection;
+  ZConnection, frxClass, frxDBSet;
 
 type
   TForm2 = class(TForm)
@@ -48,6 +48,9 @@ type
     ZQuery1: TZQuery;
     DataSource1: TDataSource;
     Button6: TButton;
+    Button7: TButton;
+    frxDBDataset1: TfrxDBDataset;
+    frxReport1: TfrxReport;
      procedure bersih;
      procedure posisiawal;
     procedure Button6Click(Sender: TObject);
@@ -57,6 +60,8 @@ type
     procedure DBGrid1CellClick(Column: TColumn);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -102,6 +107,7 @@ bersih;
   button3.Enabled := False;
   button4.Enabled := False;
   button5.Enabled := False;
+  button7.Enabled := False;
   edit1.Enabled := False;
   edit2.Enabled := False;
   edit3.Enabled := False;
@@ -124,6 +130,7 @@ begin
   button3.Enabled := False;
   button4.Enabled := False;
   button5.Enabled := True;
+  button7.Enabled := True;
   edit1.Enabled := True;
   edit2.Enabled := True;
   edit3.Enabled := True;
@@ -231,6 +238,7 @@ edit12.Text := ZQuery1.FieldList[13].AsString;
   button3.Enabled := True;
   button4.Enabled := True;
   button5.Enabled := True;
+  button6.Enabled := True;
   edit1.Enabled := True;
   edit2.Enabled := True;
   edit3.Enabled := True;
@@ -283,6 +291,28 @@ begin
   ShowMessage('Data Batal Dihapus');
   posisiawal;
 end;
+end;
+
+procedure TForm2.Button5Click(Sender: TObject);
+begin
+Edit1.Clear;
+Edit2.Clear;
+Edit3.Clear;
+Edit4.Clear;
+Edit5.Clear;
+Edit6.Clear;
+Edit7.Clear;
+Edit8.Clear;
+Edit9.Clear;
+Edit10.Clear;
+Edit11.Clear;
+Edit12.Clear;
+posisiawal;
+end;
+
+procedure TForm2.Button7Click(Sender: TObject);
+begin
+frxReport1.ShowReport();
 end;
 
 end.

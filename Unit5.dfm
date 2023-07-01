@@ -1,8 +1,8 @@
 object Form5: TForm5
   Left = 480
   Top = 242
-  Width = 680
-  Height = 429
+  Width = 662
+  Height = 605
   Caption = 'Form5'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -65,6 +65,32 @@ object Form5: TForm5
     Font.Style = []
     ParentFont = False
   end
+  object Label5: TLabel
+    Left = 160
+    Top = 304
+    Width = 163
+    Height = 16
+    Caption = 'FORM DATA POIN              :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 160
+    Top = 368
+    Width = 163
+    Height = 16
+    Caption = 'FORM DATA CATATAN       :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object Button1: TButton
     Left = 352
     Top = 96
@@ -94,7 +120,7 @@ object Form5: TForm5
   end
   object Button4: TButton
     Left = 160
-    Top = 288
+    Top = 416
     Width = 97
     Height = 41
     Caption = 'KEMBALI'
@@ -106,5 +132,23 @@ object Form5: TForm5
     ParentFont = False
     TabOrder = 3
     OnClick = Button4Click
+  end
+  object Button5: TButton
+    Left = 352
+    Top = 288
+    Width = 97
+    Height = 41
+    Caption = 'KLIK'
+    TabOrder = 4
+    OnClick = Button5Click
+  end
+  object Button6: TButton
+    Left = 352
+    Top = 352
+    Width = 97
+    Height = 41
+    Caption = 'KLIK'
+    TabOrder = 5
+    OnClick = Button6Click
   end
 end

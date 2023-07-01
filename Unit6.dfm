@@ -11,6 +11,7 @@ object Form6: TForm6
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label14: TLabel
@@ -224,6 +225,7 @@ object Form6: TForm6
       Height = 41
       Caption = 'BATAL'
       TabOrder = 11
+      OnClick = Button5Click
     end
     object Edit8: TEdit
       Left = 608
@@ -239,6 +241,7 @@ object Form6: TForm6
       Height = 41
       Caption = 'LAPORAN'
       TabOrder = 13
+      OnClick = Button7Click
     end
   end
   object DBGrid1: TDBGrid
@@ -298,5 +301,32 @@ object Form6: TForm6
     DataSet = ZQuery1
     Left = 768
     Top = 40
+  end
+  object frxDBDataset1: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    Left = 328
+    Top = 40
+  end
+  object frxReport1: TfrxReport
+    Version = '4.0.11'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 45108.740284317130000000
+    ReportOptions.LastChange = 45108.740284317130000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 256
+    Top = 40
+    Datasets = <>
+    Variables = <>
+    Style = <>
   end
 end

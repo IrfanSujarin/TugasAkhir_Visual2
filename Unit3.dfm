@@ -30,7 +30,7 @@ object Form3: TForm3
   object Panel1: TPanel
     Left = 64
     Top = 88
-    Width = 817
+    Width = 833
     Height = 281
     TabOrder = 0
     object Label2: TLabel
@@ -86,7 +86,7 @@ object Form3: TForm3
       ParentFont = False
     end
     object Label8: TLabel
-      Left = 448
+      Left = 472
       Top = 48
       Width = 84
       Height = 17
@@ -99,7 +99,7 @@ object Form3: TForm3
       ParentFont = False
     end
     object Label9: TLabel
-      Left = 448
+      Left = 472
       Top = 80
       Width = 87
       Height = 17
@@ -112,7 +112,7 @@ object Form3: TForm3
       ParentFont = False
     end
     object Label1: TLabel
-      Left = 448
+      Left = 472
       Top = 112
       Width = 62
       Height = 17
@@ -153,14 +153,14 @@ object Form3: TForm3
       TabOrder = 3
     end
     object Edit5: TEdit
-      Left = 584
+      Left = 608
       Top = 40
       Width = 185
       Height = 21
       TabOrder = 4
     end
     object Edit6: TEdit
-      Left = 584
+      Left = 608
       Top = 72
       Width = 185
       Height = 21
@@ -176,7 +176,7 @@ object Form3: TForm3
       OnClick = Button1Click
     end
     object Button2: TButton
-      Left = 192
+      Left = 168
       Top = 192
       Width = 113
       Height = 41
@@ -185,7 +185,7 @@ object Form3: TForm3
       OnClick = Button2Click
     end
     object Button3: TButton
-      Left = 344
+      Left = 296
       Top = 192
       Width = 113
       Height = 41
@@ -194,7 +194,7 @@ object Form3: TForm3
       OnClick = Button3Click
     end
     object Button4: TButton
-      Left = 504
+      Left = 424
       Top = 192
       Width = 113
       Height = 41
@@ -203,25 +203,35 @@ object Form3: TForm3
       OnClick = Button4Click
     end
     object Button5: TButton
-      Left = 656
+      Left = 552
       Top = 192
       Width = 113
       Height = 41
       Caption = 'BATAL'
       TabOrder = 10
+      OnClick = Button5Click
     end
     object Edit7: TEdit
-      Left = 584
+      Left = 608
       Top = 104
       Width = 185
       Height = 21
       TabOrder = 11
     end
+    object Button7: TButton
+      Left = 680
+      Top = 192
+      Width = 113
+      Height = 41
+      Caption = 'LAPORAN'
+      TabOrder = 12
+      OnClick = Button7Click
+    end
   end
   object DBGrid1: TDBGrid
     Left = 64
     Top = 400
-    Width = 817
+    Width = 833
     Height = 120
     DataSource = DataSource1
     TabOrder = 1
@@ -267,12 +277,39 @@ object Form3: TForm3
     SQL.Strings = (
       'select * from data_ortu')
     Params = <>
-    Left = 760
+    Left = 768
     Top = 48
   end
   object DataSource1: TDataSource
     DataSet = ZQuery1
-    Left = 816
-    Top = 56
+    Left = 832
+    Top = 48
+  end
+  object frxDBDataset1: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    Left = 128
+    Top = 48
+  end
+  object frxReport1: TfrxReport
+    Version = '4.0.11'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 45108.739268587960000000
+    ReportOptions.LastChange = 45108.739268587960000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 200
+    Top = 48
+    Datasets = <>
+    Variables = <>
+    Style = <>
   end
 end

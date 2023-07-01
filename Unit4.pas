@@ -5,7 +5,8 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, Grids, DBGrids, StdCtrls, ExtCtrls, DB, ZAbstractRODataset,
-  ZAbstractDataset, ZDataset, ZAbstractConnection, ZConnection;
+  ZAbstractDataset, ZDataset, ZAbstractConnection, ZConnection, frxClass,
+  frxDBSet;
 
 type
   TForm4 = class(TForm)
@@ -35,6 +36,9 @@ type
     ZQuery1: TZQuery;
     DataSource1: TDataSource;
     Button6: TButton;
+    Button7: TButton;
+    frxDBDataset1: TfrxDBDataset;
+    frxReport1: TfrxReport;
      procedure bersih;
      procedure posisiawal;
     procedure Button6Click(Sender: TObject);
@@ -46,6 +50,7 @@ type
     procedure Button4Click(Sender: TObject);
 
     procedure Button5Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
 
 
   private
@@ -88,6 +93,7 @@ bersih;
   button3.Enabled := False;
   button4.Enabled := False;
   button5.Enabled := False;
+  button7.Enabled := False;
   edit1.Enabled := False;
   edit2.Enabled := False;
   edit3.Enabled := False;
@@ -109,6 +115,7 @@ begin
   button3.Enabled := False;
   button4.Enabled := False;
   button5.Enabled := True;
+  button7.Enabled := True;
   edit1.Enabled := True;
   edit2.Enabled := True;
   edit3.Enabled := True;
@@ -217,7 +224,19 @@ end;
 
 procedure TForm4.Button5Click(Sender: TObject);
 begin
-form5.show;
+Edit1.Clear;
+Edit2.Clear;
+Edit3.Clear;
+Edit4.Clear;
+Edit5.Clear;
+Edit6.Clear;
+Edit7.Clear;
+posisiawal;
+end;
+
+procedure TForm4.Button7Click(Sender: TObject);
+begin
+frxReport1.ShowReport();
 end;
 
 end.

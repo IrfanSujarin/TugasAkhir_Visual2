@@ -16,10 +16,16 @@ type
     Label3: TLabel;
     Label4: TLabel;
     Button4: TButton;
+    Label5: TLabel;
+    Button5: TButton;
+    Label6: TLabel;
+    Button6: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -31,7 +37,7 @@ var
 
 implementation
 
-uses Unit2, Unit3, Unit4, TugasAkhir;
+uses Unit2, Unit3, Unit4, TugasAkhir, Unit7, Unit6;
 
 {$R *.dfm}
 
@@ -53,6 +59,16 @@ end;
 procedure TForm5.Button4Click(Sender: TObject);
 begin
 form1.show;
+end;
+
+procedure TForm5.Button5Click(Sender: TObject);
+begin
+form7.show;
+end;
+
+procedure TForm5.Button6Click(Sender: TObject);
+begin
+form6.show;
 end;
 
 end.
