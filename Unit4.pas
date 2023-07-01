@@ -44,10 +44,10 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
-    procedure Button4Click(Sender: TObject);
-    procedure Button4Click(Sender: TObject);
+
     procedure Button5Click(Sender: TObject);
-    procedure Button7Click(Sender: TObject);
+
+
   private
     { Private declarations }
   public
@@ -193,6 +193,31 @@ begin
   ZQuery1.SQL.Add('select*from data_siswa');
   ZQuery1.Open;
   posisiawal;
+end;
+end;
+
+procedure TForm4.Button4Click(Sender: TObject);
+begin
+if MessageDlg('Apakah Anda Yakin Menghapus Data Ini?',mtWarning,[mbYes,mbNo],0)= mryes then
+begin
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('delete from data_walkel where id ="'+id+'"');
+  ZQuery1.ExecSQL;
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('select * from data_walkel');
+  ZQuery1.Open;
+  ShowMessage('Data Berhasil Dihapus');
+  posisiawal;
+end else
+begin
+  ShowMessage('Data Batal Dihapus');
+  posisiawal;
+end;
+end;
+
+procedure TForm4.Button5Click(Sender: TObject);
+begin
+form5.show;
 end;
 
 end.

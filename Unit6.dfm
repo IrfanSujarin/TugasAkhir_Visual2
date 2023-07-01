@@ -1,10 +1,9 @@
-object Form4: TForm4
-  Left = 627
-  Top = 257
-  Width = 1005
+object Form6: TForm6
+  Left = 192
+  Top = 125
+  Width = 1011
   Height = 675
-  ActiveControl = Button1
-  Caption = 'Form4'
+  Caption = 'Form6'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,15 +11,14 @@ object Form4: TForm4
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Label14: TLabel
-    Left = 352
+    Left = 384
     Top = 32
-    Width = 248
+    Width = 203
     Height = 31
-    Caption = 'DATA WALI KELAS'
+    Caption = 'DATA CATATAN'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -27
@@ -37,9 +35,9 @@ object Form4: TForm4
     object Label1: TLabel
       Left = 448
       Top = 40
-      Width = 131
+      Width = 109
       Height = 17
-      Caption = 'MATA PELAJARAN'
+      Caption = 'ID ORTU / WALI'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -50,9 +48,9 @@ object Form4: TForm4
     object Label2: TLabel
       Left = 40
       Top = 40
-      Width = 27
+      Width = 70
       Height = 17
-      Caption = 'NIK'
+      Caption = 'TANGGAL'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -63,9 +61,9 @@ object Form4: TForm4
     object Label3: TLabel
       Left = 40
       Top = 72
-      Width = 46
+      Width = 75
       Height = 17
-      Caption = 'NAMA'
+      Caption = 'SEMESTER'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -76,9 +74,9 @@ object Form4: TForm4
     object Label4: TLabel
       Left = 40
       Top = 104
-      Width = 112
+      Width = 64
       Height = 17
-      Caption = 'JENIS KELAMIN'
+      Caption = 'ID SISWA'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -89,9 +87,9 @@ object Form4: TForm4
     object Label7: TLabel
       Left = 40
       Top = 136
-      Width = 94
+      Width = 109
       Height = 17
-      Caption = 'PENDIDIKAN'
+      Caption = 'ID WALI KELAS'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -102,9 +100,9 @@ object Form4: TForm4
     object Label8: TLabel
       Left = 448
       Top = 72
-      Width = 116
+      Width = 65
       Height = 17
-      Caption = 'TINGKAT KELAS'
+      Caption = 'ID POINT'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -118,6 +116,19 @@ object Form4: TForm4
       Width = 66
       Height = 17
       Caption = 'JABATAN'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Times New Roman'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label5: TLabel
+      Left = 448
+      Top = 136
+      Width = 53
+      Height = 17
+      Caption = 'STATUS'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -154,21 +165,21 @@ object Form4: TForm4
       TabOrder = 3
     end
     object Edit5: TEdit
-      Left = 600
+      Left = 608
       Top = 40
       Width = 185
       Height = 21
       TabOrder = 4
     end
     object Edit6: TEdit
-      Left = 600
+      Left = 608
       Top = 72
       Width = 185
       Height = 21
       TabOrder = 5
     end
     object Edit7: TEdit
-      Left = 600
+      Left = 608
       Top = 104
       Width = 185
       Height = 21
@@ -181,43 +192,53 @@ object Form4: TForm4
       Height = 41
       Caption = 'BARU'
       TabOrder = 7
-      OnClick = Button1Click
     end
     object Button2: TButton
-      Left = 192
+      Left = 168
       Top = 192
       Width = 113
       Height = 41
       Caption = 'SIMPAN'
       TabOrder = 8
-      OnClick = Button2Click
     end
     object Button3: TButton
-      Left = 352
+      Left = 296
       Top = 192
       Width = 113
       Height = 41
       Caption = 'EDIT'
       TabOrder = 9
-      OnClick = Button3Click
     end
     object Button4: TButton
-      Left = 512
+      Left = 424
       Top = 192
       Width = 113
       Height = 41
       Caption = 'HAPUS'
       TabOrder = 10
-      OnClick = Button4Click
     end
     object Button5: TButton
-      Left = 672
+      Left = 552
       Top = 192
       Width = 113
       Height = 41
       Caption = 'BATAL'
       TabOrder = 11
-      OnClick = Button5Click
+    end
+    object Edit8: TEdit
+      Left = 608
+      Top = 136
+      Width = 185
+      Height = 21
+      TabOrder = 12
+    end
+    object Button7: TButton
+      Left = 680
+      Top = 192
+      Width = 113
+      Height = 41
+      Caption = 'LAPORAN'
+      TabOrder = 13
     end
   end
   object DBGrid1: TDBGrid
@@ -232,7 +253,6 @@ object Form4: TForm4
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-    OnCellClick = DBGrid1CellClick
   end
   object Button6: TButton
     Left = 64
@@ -269,7 +289,7 @@ object Form4: TForm4
     Connection = ZConnection1
     Active = True
     SQL.Strings = (
-      'select * from data_walkel')
+      'select * from data_catatan')
     Params = <>
     Left = 712
     Top = 40
