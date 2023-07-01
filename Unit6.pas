@@ -47,6 +47,8 @@ type
     procedure Button7Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -118,6 +120,75 @@ begin
   edit6.Enabled := False;
   edit7.Enabled := False;
   edit8.Enabled := False;
+end;
+
+procedure TForm6.Button1Click(Sender: TObject);
+begin
+  button1.Enabled := False;
+  button2.Enabled := True;
+  button3.Enabled := False;
+  button4.Enabled := False;
+  button5.Enabled := True;
+  button7.Enabled := True;
+  edit1.Enabled := True;
+  edit2.Enabled := True;
+  edit3.Enabled := True;
+  edit4.Enabled := True;
+  edit5.Enabled := True;
+  edit6.Enabled := True;
+  edit7.Enabled := True;
+  edit8.Enabled := True;
+end;
+
+procedure TForm6.Button2Click(Sender: TObject);
+begin
+if edit1.Text =''then
+begin
+  ShowMessage('TANGGAL TIDAK BOLEH KOSONG');
+  end else
+if edit2.Text =''then
+begin
+  ShowMessage('SEMESTER TIDAK BOLEH KOSONG');
+  end else
+if edit3.Text =''then
+begin
+  ShowMessage('ID SISWA TIDAK BOLEH KOSONG');
+  end else
+if edit4.Text =''then
+begin
+  ShowMessage('ID WALI KELAS TIDAK BOLEH KOSONG');
+  end else
+if edit5.Text =''then
+begin
+  ShowMessage('ID ORTU ATAU WALI TIDAK BOLEH KOSONG');
+  end else
+if edit6.Text =''then
+begin
+  ShowMessage('ID POINT TIDAK BOLEH KOSONG');
+  end else
+if edit7.Text =''then
+begin
+  ShowMessage('JABATAN TIDAK BOLEH KOSONG');
+  end else
+if edit8.Text =''then
+begin
+  ShowMessage('STATUS TIDAK BOLEH KOSONG');
+  end else
+begin
+  //simpan
+end;
+
+ZQuery1.SQL.Clear;
+ZQuery1.SQL.Add('insert into data_catatan values(null,"'+edit1.text+'","'+edit2.text+'","'+edit3.text+'","'+edit4.text+'","'+edit5.text+'","'+edit6.text+'","'+edit7.text+'","'+edit8.text+'")');
+ZQuery1.ExecSQL;
+
+ZQuery1.SQL.Clear;
+ZQuery1.SQL.Add('select * from data_catatan');
+ZQuery1.Open;
+ShowMessage('Data Berhasil Disimpan');
+posisiawal;
+end;
+
 end;
 
 end.
