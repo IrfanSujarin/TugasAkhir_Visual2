@@ -49,6 +49,8 @@ type
     procedure FormShow(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,6 +58,7 @@ type
   end;
 
 var
+  id:string;
   Form6: TForm6;
 
 implementation
@@ -189,6 +192,45 @@ ShowMessage('Data Berhasil Disimpan');
 posisiawal;
 end;
 
+end;
+
+procedure TForm6.Button3Click(Sender: TObject);
+begin
+if (edit1.Text= '')or(edit2.Text= '')or(edit3.Text= '')or(edit4.Text= '')or(edit5.Text= '')or(edit6.Text= '')or(edit7.Text= '') or(edit7.Text= '') then
+begin
+  ShowMessage('Inputan Wajib Di Isi');
+end else
+
+begin
+  ShowMessage('Data Berhasil Di Update');
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('Update data_catatan set tanggal="'+edit1.Text+'",semester="'+edit2.Text+'",id_siswa="'+edit3.Text+'",id_walikelas="'+edit4.Text+'",id_orangtuaatauwali="'+edit5.Text+'",id_point="'+edit6.Text+'",keterangan="'+edit7.Text+'",status="'+edit8.Text+'" where id_catatan ="'+id+'"');
+  ZQuery1.ExecSQL;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('select*from data_catatan');
+  ZQuery1.Open;
+  posisiawal;
+end;
+end;
+
+procedure TForm6.Button4Click(Sender: TObject);
+begin
+if MessageDlg('Apakah Anda Yakin Menghapus Data Ini?',mtWarning,[mbYes,mbNo],0)= mryes then
+begin
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('delete from data_catatan where id ="'+id+'"');
+  ZQuery1.ExecSQL;
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('select * from data_catatan');
+  ZQuery1.Open;
+  ShowMessage('Data Berhasil Dihapus');
+  posisiawal;
+end else
+begin
+  ShowMessage('Data Batal Dihapus');
+  posisiawal;
+end;
 end;
 
 end.

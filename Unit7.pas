@@ -44,6 +44,7 @@ type
   end;
 
 var
+  id:string;
   Form7: TForm7;
 
 implementation

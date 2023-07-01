@@ -114,9 +114,9 @@ object Form6: TForm6
     object Label9: TLabel
       Left = 448
       Top = 104
-      Width = 66
+      Width = 102
       Height = 17
-      Caption = 'JABATAN'
+      Caption = 'KETERANGAN'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -211,6 +211,7 @@ object Form6: TForm6
       Height = 41
       Caption = 'EDIT'
       TabOrder = 9
+      OnClick = Button3Click
     end
     object Button4: TButton
       Left = 424
@@ -219,6 +220,7 @@ object Form6: TForm6
       Height = 41
       Caption = 'HAPUS'
       TabOrder = 10
+      OnClick = Button4Click
     end
     object Button5: TButton
       Left = 552

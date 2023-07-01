@@ -2,7 +2,7 @@ object Form7: TForm7
   Left = 192
   Top = 125
   Width = 1012
-  Height = 675
+  Height = 646
   Caption = 'Form7'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
