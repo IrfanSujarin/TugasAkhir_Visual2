@@ -37,6 +37,9 @@ type
     procedure Button7Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -94,6 +97,67 @@ begin
   edit1.Enabled := False;
   edit2.Enabled := False;
   edit3.Enabled := False;
+end;
+
+procedure TForm7.DBGrid1CellClick(Column: TColumn);
+begin
+id:=ZQuery1.Fields[0].AsString;
+edit1.Text := ZQuery1.FieldList[1].AsString;
+edit2.Text := ZQuery1.FieldList[2].AsString;
+edit3.Text := ZQuery1.FieldList[3].AsString;
+
+  button1.Enabled := False;
+  button2.Enabled := False;
+  button3.Enabled := True;
+  button4.Enabled := True;
+  button5.Enabled := True;
+  button7.Enabled := True;
+  edit1.Enabled := True;
+  edit2.Enabled := True;
+  edit3.Enabled := True;
+end;
+
+procedure TForm7.Button1Click(Sender: TObject);
+begin
+  button1.Enabled := False;
+  button2.Enabled := True;
+  button3.Enabled := False;
+  button4.Enabled := False;
+  button5.Enabled := True;
+  button7.Enabled := True;
+  edit1.Enabled := True;
+  edit2.Enabled := True;
+  edit3.Enabled := True;
+end;
+
+procedure TForm7.Button2Click(Sender: TObject);
+begin
+if edit1.Text =''then
+begin
+  ShowMessage('NAMA POIN TIDAK BOLEH KOSONG');
+  end else
+if edit2.Text =''then
+begin
+  ShowMessage('TOTAL TIDAK BOLEH KOSONG');
+  end else
+if edit3.Text =''then
+begin
+  ShowMessage('KETERANGAN TIDAK BOLEH KOSONG');
+  end else
+begin
+  //simpan
+end;
+
+ZQuery1.SQL.Clear;
+ZQuery1.SQL.Add('insert into data_poin values(null,"'+edit1.text+'","'+edit2.text+'","'+edit3.text+'")');
+ZQuery1.ExecSQL;
+
+ZQuery1.SQL.Clear;
+ZQuery1.SQL.Add('select * from data_poin');
+ZQuery1.Open;
+ShowMessage('Data Berhasil Disimpan');
+posisiawal;
+end;
 end;
 
 end.

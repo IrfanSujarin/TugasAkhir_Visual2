@@ -36,9 +36,9 @@ object Form7: TForm7
     object Label2: TLabel
       Left = 40
       Top = 40
-      Width = 70
+      Width = 85
       Height = 17
-      Caption = 'TANGGAL'
+      Caption = 'NAMA POIN'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -49,9 +49,9 @@ object Form7: TForm7
     object Label3: TLabel
       Left = 40
       Top = 72
-      Width = 75
+      Width = 48
       Height = 17
-      Caption = 'SEMESTER'
+      Caption = 'TOTAL'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -62,9 +62,9 @@ object Form7: TForm7
     object Label4: TLabel
       Left = 40
       Top = 104
-      Width = 64
+      Width = 102
       Height = 17
-      Caption = 'ID SISWA'
+      Caption = 'KETERANGAN'
       Font.Charset = ANSI_CHARSET
       Font.Color = clWindowText
       Font.Height = -15
@@ -100,6 +100,7 @@ object Form7: TForm7
       Height = 41
       Caption = 'BARU'
       TabOrder = 3
+      OnClick = Button1Click
     end
     object Button2: TButton
       Left = 168
@@ -108,6 +109,7 @@ object Form7: TForm7
       Height = 41
       Caption = 'SIMPAN'
       TabOrder = 4
+      OnClick = Button2Click
     end
     object Button3: TButton
       Left = 296
@@ -156,6 +158,7 @@ object Form7: TForm7
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
   end
   object Button6: TButton
     Left = 64
