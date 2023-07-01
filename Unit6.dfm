@@ -260,6 +260,7 @@ object Form6: TForm6
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
   end
   object Button6: TButton
     Left = 64

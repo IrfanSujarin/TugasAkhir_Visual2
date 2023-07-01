@@ -51,6 +51,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -231,6 +232,34 @@ begin
   ShowMessage('Data Batal Dihapus');
   posisiawal;
 end;
+end;
+
+procedure TForm6.DBGrid1CellClick(Column: TColumn);
+begin
+id:=ZQuery1.Fields[0].AsString;
+edit1.Text := ZQuery1.FieldList[1].AsString;
+edit2.Text := ZQuery1.FieldList[2].AsString;
+edit3.Text := ZQuery1.FieldList[3].AsString;
+edit4.Text := ZQuery1.FieldList[4].AsString;
+edit5.Text := ZQuery1.FieldList[5].AsString;
+edit6.Text := ZQuery1.FieldList[7].AsString;
+edit7.Text := ZQuery1.FieldList[8].AsString;
+edit8.Text := ZQuery1.FieldList[9].AsString;
+
+  button1.Enabled := False;
+  button2.Enabled := False;
+  button3.Enabled := True;
+  button4.Enabled := True;
+  button5.Enabled := True;
+  button7.Enabled := True;
+  edit1.Enabled := True;
+  edit2.Enabled := True;
+  edit3.Enabled := True;
+  edit4.Enabled := True;
+  edit5.Enabled := True;
+  edit6.Enabled := True;
+  edit7.Enabled := True;
+  edit8.Enabled := True;
 end;
 
 end.
