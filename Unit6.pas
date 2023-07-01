@@ -193,8 +193,6 @@ ShowMessage('Data Berhasil Disimpan');
 posisiawal;
 end;
 
-end;
-
 procedure TForm6.Button3Click(Sender: TObject);
 begin
 if (edit1.Text= '')or(edit2.Text= '')or(edit3.Text= '')or(edit4.Text= '')or(edit5.Text= '')or(edit6.Text= '')or(edit7.Text= '') or(edit7.Text= '') then

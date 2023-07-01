@@ -40,6 +40,8 @@ type
     procedure DBGrid1CellClick(Column: TColumn);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -157,6 +159,44 @@ ZQuery1.SQL.Add('select * from data_poin');
 ZQuery1.Open;
 ShowMessage('Data Berhasil Disimpan');
 posisiawal;
+end;
+
+procedure TForm7.Button3Click(Sender: TObject);
+begin
+if (edit1.Text= '')or(edit2.Text= '')or(edit3.Text= '') then
+begin
+  ShowMessage('Inputan Wajib Di Isi');
+end else
+
+begin
+  ShowMessage('Data Berhasil Di Update');
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('Update data_poin set nama_poin="'+edit1.Text+'",total="'+edit2.Text+'",keterangan="'+edit3.Text+'" where id_poin ="'+id+'"');
+  ZQuery1.ExecSQL;
+
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('select*from data_poin');
+  ZQuery1.Open;
+  posisiawal;
+end;
+end;
+
+procedure TForm7.Button4Click(Sender: TObject);
+begin
+if MessageDlg('Apakah Anda Yakin Menghapus Data Ini?',mtWarning,[mbYes,mbNo],0)= mryes then
+begin
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('delete from data_poin where id ="'+id+'"');
+  ZQuery1.ExecSQL;
+  ZQuery1.SQL.Clear;
+  ZQuery1.SQL.Add('select * from data_poin');
+  ZQuery1.Open;
+  ShowMessage('Data Berhasil Dihapus');
+  posisiawal;
+end else
+begin
+  ShowMessage('Data Batal Dihapus');
+  posisiawal;
 end;
 end;
 
