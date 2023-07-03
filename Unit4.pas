@@ -93,7 +93,7 @@ bersih;
   button3.Enabled := False;
   button4.Enabled := False;
   button5.Enabled := False;
-  button7.Enabled := False;
+  button7.Enabled := True;
   edit1.Enabled := False;
   edit2.Enabled := False;
   edit3.Enabled := False;
@@ -197,7 +197,7 @@ begin
   ZQuery1.ExecSQL;
 
   ZQuery1.SQL.Clear;
-  ZQuery1.SQL.Add('select*from data_siswa');
+  ZQuery1.SQL.Add('select*from data_walkel');
   ZQuery1.Open;
   posisiawal;
 end;

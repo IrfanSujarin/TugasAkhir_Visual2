@@ -95,7 +95,7 @@ begin
   button3.Enabled := False;
   button4.Enabled := False;
   button5.Enabled := False;
-  button7.Enabled := False;
+  button7.Enabled := True;
   edit1.Enabled := False;
   edit2.Enabled := False;
   edit3.Enabled := False;
